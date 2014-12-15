@@ -1,4 +1,4 @@
-= Python for Finance (O'Reilly)
+# Python for Finance (O'Reilly)
 
 This repository provides all Python codes and IPython Notebooks of the book _Python for Finance_ by Yves Hilpisch.
 
