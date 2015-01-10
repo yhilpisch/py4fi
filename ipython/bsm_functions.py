@@ -72,7 +72,7 @@ def bsm_vega(S0, K, T, r, sigma):
 
     S0 = float(S0)
     d1 = (log(S0 / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * sqrt(T))
-    vega = S0 * stats.norm.cdf(d1, 0.0, 1.0) * sqrt(T)
+    vega = S0 * stats.norm.pdf(d1, 0.0, 1.0) * sqrt(T)
     return vega
 
 # Implied volatility function
