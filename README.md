@@ -4,7 +4,7 @@ This repository provides all Python codes and IPython Notebooks of the book _Pyt
 
 ![alt text](http://hilpisch.com/python_for_finance.png "Book Cover")
 
-Oder the book here http://shop.oreilly.com/product/0636920032441.do.
+Oder the book here http://shop.oreilly.com/product/0636920032441.do or under http://www.amazon.com/Python-Finance-Analyze-Financial-Data/dp/1491945281/.
 
 ## Python Quant Platform
 
@@ -26,4 +26,4 @@ http://twitter.com/dyjh
 http://derivatives-analytics-with-python.com
 
 **Python for Finance (O'Reilly)** \|
-http://shop.oreilly.com/product/0636920032441.do
+http://python-for-finance.com
