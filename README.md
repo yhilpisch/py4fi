@@ -8,6 +8,14 @@ Oder the book here http://shop.oreilly.com/product/0636920032441.do or under htt
 
 There are two code versions available: for **Python 2.7** and **Python 3.5**.
 
+## Yahoo! Finance Issue
+
+Recently **Yahoo! Finance stopped their financial data API service** that is used in the book in many different places.
+
+One way of fixing it is to simply replace `data_source='yahoo'` by `data_source='google'` where appropriate (and maybe working with an alternative symbol). 
+
+Another way is to use this fix: https://github.com/ranaroussi/fix-yahoo-finance
+
 ## Quant Platform
 
 You can immediately use all codes and Jupyter Notebooks by registering on the Quant Platform under http://oreilly.quant-platform.com.
