@@ -11,13 +11,15 @@ t0 = time()
 
 # Parameters
 S0 = 100.; K = 105.; T = 1.0; r = 0.05; sigma = 0.2
-M = 50; dt = T / M; I = 250000
+M = 50; dt = T / M; I = 250000 * 2
 
 # Simulating I paths with M time steps
 S = np.zeros((M + 1, I))
 S[0] = S0
 for t in range(1, M + 1):
     z = np.random.standard_normal(I)  # pseudorandom numbers
+    z -= z.mean()  # corrects 1st moment
+    z /= z.std()  # corrects 2nd moment
     S[t] = S[t - 1] * np.exp((r - 0.5 * sigma ** 2) * dt
                                   + sigma * math.sqrt(dt) * z)
       # vectorized operation per time step over all paths

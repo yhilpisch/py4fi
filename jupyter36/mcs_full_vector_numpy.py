@@ -12,16 +12,19 @@ t0 = time()
 
 # Parameters
 S0 = 100.; K = 105.; T = 1.0; r = 0.05; sigma = 0.2
-M = 50; dt = T / M; I = 250000
+M = 50; dt = T / M; I = 250000 * 2
 
 # Simulating I paths with M time steps
 ran = random.standard_normal((M + 1, I))
-ran[0] = 0.0
-S = S0 * exp(cumsum((r - 0.5 * sigma ** 2) * dt
-            + sigma * math.sqrt(dt) * ran, axis=0))
+ran -= ran.mean()  # corrects 1st moment
+ran /= ran.std()  # corrects 2nd moment
+S = zeros_like(ran)
+S[0] = S0
+S[1:] = S0 * exp(cumsum((r - 0.5 * sigma ** 2) * dt
+            + sigma * math.sqrt(dt) * ran[1:], axis=0))
   # sum instead of cumsum would also do
   # if only the final values are of interest
-S[0] = S0
+
     
 # Calculating the Monte Carlo estimator
 C0 = math.exp(-r * T) * sum(maximum(S[-1] - K, 0)) / I
