@@ -22,4 +22,4 @@ hT = np.maximum(ST - K, 0)  # inner values at maturity
 C0 = np.exp(-r * T) * np.sum(hT) / I  # Monte Carlo estimator
 
 # Result Output
-print "Value of the European Call Option %5.3f" % C0
+print ("Value of the European Call Option %5.3f" % C0)
